@@ -2118,12 +2118,19 @@ public abstract class BaseStatusBar extends SystemUI implements
                 && keyguard.isInputRestricted();        
         boolean interrupt = (isFullscreen || (isHighPriority && (isNoisy || hasTicker))
                 || asHeadsUp == Notification.HEADS_UP_REQUESTED)
+                
+        boolean isExpanded = false;
+            if (mStackScroller != null) {
+                isExpanded = mStackScroller.getIsExpanded();
+        }
 
+        boolean interrupt = (isFullscreen || (isHighPriority && (isNoisy || hasTicker)))
                 && isAllowed
                 && !isOngoing
                 && !accessibilityForcesLaunch
                 && mPowerManager.isScreenOn()
-                && !keyguardIsShowing;
+                && !keyguardIsShowing
+                && !isExpanded;
 
         try {
             interrupt = interrupt && !mDreamManager.isDreaming();
@@ -2133,7 +2140,7 @@ public abstract class BaseStatusBar extends SystemUI implements
 
         // its below our threshold priority, we might want to always display
         // notifications from certain apps
-        if (!isHighPriority && !isOngoing && !keyguardIsShowing) {
+        if (!isHighPriority && !isOngoing && !keyguardIsShowing && !isExpanded) {
             // However, we don't want to interrupt if we're in an application that is
             // in Do Not Disturb
             if (!isPackageInDnd(getTopLevelPackage())) {
