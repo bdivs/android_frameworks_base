@@ -23,14 +23,7 @@ import android.app.PendingIntent;
 import android.content.ContentUris;
 import android.content.ContentResolver;
 import android.content.Context;
-<<<<<<< HEAD
-=======
-import android.database.ContentObserver;
-import android.net.Uri;
-import android.os.Handler;
 import android.os.UserHandle;
-import android.provider.Settings;
->>>>>>> 5ae2857... SystemUI: add HeadsUp button in status bar header (1/2)
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -154,38 +147,14 @@ public class StatusBarHeaderView extends RelativeLayout implements View.OnClickL
     private float mCurrentT;
     private boolean mShowingDetail;
 
-<<<<<<< HEAD
-=======
-    private int mShowBatteryText;
 
-    private ContentObserver mObserver = new ContentObserver(new Handler()) {
-        public void onChange(boolean selfChange, Uri uri) {
-            loadShowBatteryTextSetting();
-            showHeadsUpButton();
-        }
-    };
->>>>>>> 5ae2857... SystemUI: add HeadsUp button in status bar header (1/2)
     private SettingsObserver mSettingsObserver;
     private boolean mShowWeather;
     private boolean mShowBatteryTextExpanded;
 
     public StatusBarHeaderView(Context context, AttributeSet attrs) {
         super(context, attrs);
-<<<<<<< HEAD
-=======
-        loadShowBatteryTextSetting();
-        showHeadsUpButton();
-    }
 
-    private void loadShowBatteryTextSetting() {
-        mShowBatteryText = Settings.System.getInt(getContext().getContentResolver(),
-                Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0);
->>>>>>> 5ae2857... SystemUI: add HeadsUp button in status bar header (1/2)
-    }
-
-    private void showHeadsUpButton() {
-        mShowHeadsUpButton = Settings.System.getInt(getContext().getContentResolver(),
-                Settings.System.HEADS_UP_SHOW_STATUS_BUTTON, 0) == 1;
     }
 
     @Override
