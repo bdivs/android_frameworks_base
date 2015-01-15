@@ -2124,7 +2124,6 @@ public abstract class BaseStatusBar extends SystemUI implements
                 isExpanded = mStackScroller.getIsExpanded();
         }
 
-        boolean interrupt = (isFullscreen || (isHighPriority && (isNoisy || hasTicker)))
                 && isAllowed
                 && !isOngoing
                 && !accessibilityForcesLaunch
