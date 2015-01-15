@@ -15,19 +15,7 @@
 ** See the License for the specific language governing permissions and
 ** limitations under the License.
 */
-<<<<<<< HEAD:core/java/android/bluetooth/BluetoothHidDeviceAppConfiguration.aidl
 
 package android.bluetooth;
 
 parcelable BluetoothHidDeviceAppConfiguration;
-=======
--->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
-    <string name="accessibility_data_connection_HP">HSPA+</string>
-
-    <!-- Heads up toast -->
-    <string name="heads_up_enabled">Heads up notifications are enabled</string>
-    <string name="heads_up_disabled">Heads up notifications are disabled</string>
-</resources>
->>>>>>> 5ae2857... SystemUI: add HeadsUp button in status bar header (1/2):packages/SystemUI/res/values/custom_strings.xml
