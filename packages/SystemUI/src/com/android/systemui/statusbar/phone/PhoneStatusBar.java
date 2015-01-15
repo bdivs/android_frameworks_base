@@ -449,16 +449,9 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.BATTERY_SAVER_MODE_COLOR),
                     false, this, UserHandle.USER_ALL);
-<<<<<<< HEAD
-=======
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.HEADS_UP_NOTIFCATION_DECAY),
                     false, this, UserHandle.USER_ALL);
-            //resolver.registerContentObserver(Settings.System.getUriFor(
-            //        Settings.System.STATUS_BAR_BATTERY_STYLE), false, this);
-            //resolver.registerContentObserver(Settings.System.getUriFor(
-            //        Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT), false, this);
->>>>>>> a68ab24... HeadsUp: add timeout option (1/2)
             update();
         }
 
@@ -483,9 +476,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                             mContext.getResources().getBoolean(R.bool.enable_ticker)
                             ? 1 : 0, UserHandle.USER_CURRENT) == 1;
                     initTickerView();
-<<<<<<< HEAD
-            }            
-=======
+
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.HEADS_UP_NOTIFCATION_DECAY))) {
                     mHeadsUpNotificationDecay = Settings.System.getIntForUser(
@@ -496,7 +487,6 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                             UserHandle.USER_CURRENT);
                     resetHeadsUpDecayTimer();
             }
->>>>>>> a68ab24... HeadsUp: add timeout option (1/2)
             update();
         }
 
