@@ -2337,12 +2337,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             loadIntegerSetting(stmt, Settings.System.STATUS_BAR_NOTIF_COUNT,
                     R.integer.def_notif_count);
 
-<<<<<<< HEAD
             loadIntegerSetting(stmt, Settings.System.STATUS_BAR_BATTERY_STYLE,
                     R.integer.def_battery_style);
-=======
+
             loadHeadsUpSetting(stmt);
->>>>>>> 18dc0dd... Base: forward port Headsup options (1/2)
+
 
         } finally {
             if (stmt != null) stmt.close();
