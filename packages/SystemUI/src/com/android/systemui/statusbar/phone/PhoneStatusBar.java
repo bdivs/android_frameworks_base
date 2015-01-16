@@ -913,44 +913,12 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 
         updateShowSearchHoldoff();
 
-<<<<<<< HEAD
         addGestureAnywhereView();
-=======
-        try {
-            boolean showNav = mWindowManagerService.hasNavigationBar();
-            if (DEBUG) Log.v(TAG, "hasNavigationBar=" + showNav);
-            if (showNav && !mRecreating) {
-                mNavigationBarView =
-                    (NavigationBarView) View.inflate(context, R.layout.navigation_bar, null);
-                mNavigationBarView.updateResources(getNavbarThemedResources());
-
-                mNavigationBarView.setDisabledFlags(mDisabled);
-                mNavigationBarView.setBar(this);
-                mNavigationBarView.setOnVerticalChangedListener(
-                        new NavigationBarView.OnVerticalChangedListener() {
-                    @Override
-                    public void onVerticalChanged(boolean isVertical) {
-                        if (mSearchPanelView != null) {
-                            mSearchPanelView.setHorizontal(isVertical);
-                        }
-                        mNotificationPanel.setQsScrimEnabled(!isVertical);
-                    }
-                });
-                mNavigationBarView.setOnTouchListener(new View.OnTouchListener() {
-                    @Override
-                    public boolean onTouch(View v, MotionEvent event) {
-                        checkUserAutohide(v, event);
-                        return false;
-                    }});
-            }
-        } catch (RemoteException ex) {
-            // no window manager? good luck with that
-        }
->>>>>>> 6e133f1... Themes: Port to CM12 [1/6]
 
         if (mNavigationBarView == null) {
             mNavigationBarView =
                 (NavigationBarView) View.inflate(context, R.layout.navigation_bar, null);
+            mNavigationBarView.updateResources(getNavbarThemedResources());
         }
         
         mNavigationBarView.setDisabledFlags(mDisabled);
@@ -984,18 +952,14 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         mMoreIcon = mStatusBarView.findViewById(R.id.moreIcon);
         mNotificationIcons.setOverflowIndicator(mMoreIcon);
         mStatusBarContents = (LinearLayout)mStatusBarView.findViewById(R.id.status_bar_contents);
-<<<<<<< HEAD
         mCenterClockLayout = (LinearLayout)mStatusBarView.findViewById(R.id.center_clock_layout);
         Clock cclock = (Clock) mStatusBarView.findViewById(R.id.center_clock);
         if (cclock != null) {
             cclock.setPhoneStatusBar(this);
         }
         
-        mStackScroller = (NotificationStackScrollLayout) mStatusBarWindow.findViewById(
-=======
-
         mStackScroller = (NotificationStackScrollLayout) mStatusBarWindowContent.findViewById(
->>>>>>> 6e133f1... Themes: Port to CM12 [1/6]
+
                 R.id.notification_stack_scroller);
         mStackScroller.setLongPressListener(getNotificationLongClicker());
         mStackScroller.setPhoneStatusBar(this);

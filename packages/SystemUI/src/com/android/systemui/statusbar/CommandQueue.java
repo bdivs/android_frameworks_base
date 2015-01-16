@@ -244,7 +244,6 @@ public class CommandQueue extends IStatusBar.Stub {
         }
     }
 
-<<<<<<< HEAD
     public void showCustomIntentAfterKeyguard(Intent intent) {
         synchronized (mList) {
             mHandler.removeMessages(MSG_START_CUSTOM_INTENT_AFTER_KEYGUARD);
@@ -259,14 +258,12 @@ public class CommandQueue extends IStatusBar.Stub {
             mHandler.removeMessages(MSG_HIDE_HEADS_UP);
             mHandler.sendEmptyMessage(MSG_HIDE_HEADS_UP);
         }
-=======
     public void pause() {
         mPaused = true;
     }
 
     public void resume() {
         mPaused = false;
->>>>>>> 6e133f1... Themes: Port to CM12 [1/6]
     }
 
     private final class H extends Handler {

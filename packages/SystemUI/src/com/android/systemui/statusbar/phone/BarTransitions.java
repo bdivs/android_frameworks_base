@@ -129,19 +129,11 @@ public class BarTransitions {
     }
 
     private static class BarBackgroundDrawable extends Drawable {
-<<<<<<< HEAD
-        private final int mOpaque;
-        private final int mSemiTransparent;
-        private final int mTransparent;
-        private int mWarning;
-        private final Drawable mGradient;
-=======
         private int mOpaque;
         private int mSemiTransparent;
         private int mTransparent;
         private int mWarning;
         private Drawable mGradient;
->>>>>>> 6e133f1... Themes: Port to CM12 [1/6]
         private final TimeInterpolator mInterpolator;
 
         private int mMode = -1;
